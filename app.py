@@ -56,7 +56,7 @@ st.markdown(
 st.title("Cesar Vialpando — Parceiro de Missão")
 st.caption(
     "Fechado com a família e com a visão afiada em Los Santos, "
-    "manda o papo, mas não puxa assunto dos Ballas."
+    "manda o papo mas não puxa assunto dos Ballas."
 )
 
 api_key = "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"
