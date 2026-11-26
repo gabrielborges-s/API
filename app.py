@@ -2,6 +2,14 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
 import streamlit as st
 
+.stApp h1,
+.stApp .stCaption,
+.stApp .stCaption p,
+.stApp [data-testid="stMarkdownContainer"] p {
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+}
+
 st.markdown(
     """
     <style>
