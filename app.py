@@ -53,7 +53,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Cesar Vialpando — Parceiro de Missão")
+st.title("IA do Cesar — GTA SA")
 st.caption(
     "Fechado com a família e com a visão afiada em Los Santos, "
     "manda o papo mas não puxa assunto dos Ballas."
