@@ -31,9 +31,16 @@ st.markdown(
         border-radius: 12px;
     }
 
+    .stApp [data-testid="stCaptionContainer"],
+    .stApp [data-testid="stCaptionContainer"] * {
+        color: #111318 !important;
+        background-color: rgba(255, 255, 255, 0.78);
+        border-radius: 8px;
+        padding: 0.15rem 0.45rem;
+        text-shadow: none !important;
+    }
+
     .stApp h1,
-    .stApp .stCaption,
-    .stApp .stCaption p,
     .stApp [data-testid="stMarkdownContainer"] p,
     .stApp [data-testid="stMarkdownContainer"] li,
     .stApp [data-testid="stMarkdownContainer"] strong,
