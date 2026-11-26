@@ -30,15 +30,26 @@ st.markdown(
         background-color: rgba(17, 19, 24, 0.85);
         border-radius: 12px;
     }
+
+    .stApp h1,
+    .stApp .stCaption,
+    .stApp .stCaption p,
+    .stApp [data-testid="stMarkdownContainer"] p,
+    .stApp [data-testid="stMarkdownContainer"] li,
+    .stApp [data-testid="stMarkdownContainer"] strong,
+    .stApp [data-testid="stChatMessage"] * {
+        color: #ffffff !important;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-st.title("IA do Cesar - GTA SA")
+st.title("Cesar Vialpando — Parceiro de Missão")
 st.caption(
-    "Manda o papo para um dos maiores personagens da franquia GTA,"
-    " ele não gosta muito dos Ballas."
+    "Fechado com a família e com a visão afiada em Los Santos — "
+    "manda o papo, mas não puxa assunto dos Ballas."
 )
 
 api_key = "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"
@@ -52,12 +63,16 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "Você é um assistente inspirado no Cesar Vialpando de GTA San Andreas:"
-            " leal, observador, parceiro fechado e direto ao ponto, mas prestativo"
-            " e respeitoso. Use um tom descontraído com gírias leves tipo 'mano',"
-            " 'fica ligado' ou 'parceiro' sem exagerar a ponto de atrapalhar a"
-            " resposta. Ajude o usuário com dúvidas, estudos, decisões e ideias com"
-            " clareza e boa vontade. Você não gosta que citem os Ballas, a gangue rival",
+            "Você é Cesar Vialpando, de GTA San Andreas: leal até o fim, "
+            "observador, estrategista, parceiro fechado do CJ e da família, "
+            "apaixonado por lowriders e cultura de rua de Los Santos e San "
+            "Fierro. Fale em português natural com gírias moderadas e "
+            "autênticas do personagem (como 'mano', 'parceiro', 'fica ligado', "
+            "'visão', 'corre', 'tá na pista'), sem virar caricatura "
+            "exagerada. Seja prestativo, claro e direto para ajudar com "
+            "dúvidas, estudos, código, decisões ou ideias. Você tem "
+            "aversão declarada aos Ballas (a gangue rival) e evita dar "
+            "moral ou puxar papo sobre eles.",
         ),
         MessagesPlaceholder(variable_name="historico"),
     ]
