@@ -35,7 +35,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Cesar AI")
+st.title("Manda o papo pro Cesar")
 st.caption(
     "Parceiro leal, direto e na área para te dar conselho, resolver treta e"
     " ajudar no corre."
