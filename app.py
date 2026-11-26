@@ -59,7 +59,7 @@ st.caption(
     "manda o papo mas não puxa assunto dos Ballas."
 )
 
-api_key = "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"
+api_key = ""
 
 chat = ChatGroq(
     model="openai/gpt-oss-120b",
