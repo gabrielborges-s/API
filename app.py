@@ -55,7 +55,7 @@ st.markdown(
 
 st.title("Cesar Vialpando — Parceiro de Missão")
 st.caption(
-    "Fechado com a família e com a visão afiada em Los Santos — "
+    "Fechado com a família e com a visão afiada em Los Santos, "
     "manda o papo, mas não puxa assunto dos Ballas."
 )
 
