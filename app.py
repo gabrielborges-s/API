@@ -2,6 +2,8 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
 import streamlit as st
 
+AVATAR_CESAR = "🕶️"
+
 st.set_page_config(
     page_title="Cesar AI — Parceiro de Missão",
     page_icon="🚗",
@@ -28,22 +30,9 @@ st.markdown(
         background-color: rgba(17, 19, 24, 0.85);
         border-radius: 12px;
     }
-
-    .stApp h1,
-    .stApp .stCaption,
-    .stApp .stCaption p,
-    .stApp [data-testid="stMarkdownContainer"] p {
-        color: #ffffff;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
-    }
     </style>
     """,
     unsafe_allow_html=True,
-)
-
-st.set_page_config(
-    page_title="Cesar AI — Parceiro de Missão",
-    page_icon="🚗",
 )
 
 st.title("Cesar AI")
@@ -59,18 +48,20 @@ chat = ChatGroq(
     api_key=api_key,
 )
 
-prompt = ChatPromptTemplate.from_messages([
-    (
-        "system",
-        "Você é um assistente inspirado no Cesar Vialpando de GTA San Andreas:"
-        " leal, observador, parceiro fechado e direto ao ponto, mas prestativo"
-        " e respeitoso. Use um tom descontraído com gírias leves tipo 'mano',"
-        " 'fica ligado' ou 'parceiro' sem exagerar a ponto de atrapalhar a"
-        " resposta. Ajude o usuário com dúvidas, estudos, decisões e ideias com"
-        " clareza e boa vontade.",
-    ),
-    MessagesPlaceholder(variable_name="historico"),
-])
+prompt = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            "Você é um assistente inspirado no Cesar Vialpando de GTA San Andreas:"
+            " leal, observador, parceiro fechado e direto ao ponto, mas prestativo"
+            " e respeitoso. Use um tom descontraído com gírias leves tipo 'mano',"
+            " 'fica ligado' ou 'parceiro' sem exagerar a ponto de atrapalhar a"
+            " resposta. Ajude o usuário com dúvidas, estudos, decisões e ideias com"
+            " clareza e boa vontade.",
+        ),
+        MessagesPlaceholder(variable_name="historico"),
+    ]
+)
 
 chain = prompt | chat
 
@@ -78,7 +69,9 @@ if "mensagens" not in st.session_state:
     st.session_state.mensagens = []
 
 for role, content in st.session_state.mensagens:
-    with st.chat_message(role):
+    with st.chat_message(
+        role, avatar=AVATAR_CESAR if role == "assistant" else None
+    ):
         st.markdown(content)
 
 pergunta = st.chat_input("Manda a visão...")
@@ -88,7 +81,7 @@ if pergunta:
     with st.chat_message("user"):
         st.markdown(pergunta)
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=AVATAR_CESAR):
         try:
             resposta = chain.invoke(
                 {"historico": st.session_state.mensagens}
