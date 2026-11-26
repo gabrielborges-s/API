@@ -5,7 +5,7 @@ import streamlit as st
 AVATAR_CESAR = "🕶️"
 
 st.set_page_config(
-    page_title="Cesar AI — Parceiro de Missão",
+    page_title="IA do Cesar - GTA SA",
     page_icon="🚗",
 )
 
