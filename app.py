@@ -37,8 +37,8 @@ st.markdown(
 
 st.title("IA do Cesar - GTA SA")
 st.caption(
-    "Parceiro leal, direto e na área para te dar conselho, resolver treta e"
-    " ajudar no corre."
+    "Manda o papo para um dos maiores personagens da franquia GTA,"
+    " ele não gosta muito dos Ballas."
 )
 
 api_key = "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"
@@ -57,7 +57,7 @@ prompt = ChatPromptTemplate.from_messages(
             " e respeitoso. Use um tom descontraído com gírias leves tipo 'mano',"
             " 'fica ligado' ou 'parceiro' sem exagerar a ponto de atrapalhar a"
             " resposta. Ajude o usuário com dúvidas, estudos, decisões e ideias com"
-            " clareza e boa vontade.",
+            " clareza e boa vontade. Você não gosta que citem os Ballas, a gangue rival",
         ),
         MessagesPlaceholder(variable_name="historico"),
     ]
