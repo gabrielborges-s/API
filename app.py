@@ -2,13 +2,10 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
 import streamlit as st
 
-.stApp h1,
-.stApp .stCaption,
-.stApp .stCaption p,
-.stApp [data-testid="stMarkdownContainer"] p {
-    color: #ffffff;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
-}
+st.set_page_config(
+    page_title="Cesar AI — Parceiro de Missão",
+    page_icon="🚗",
+)
 
 st.markdown(
     """
@@ -30,6 +27,14 @@ st.markdown(
     [data-testid="stChatInput"] {
         background-color: rgba(17, 19, 24, 0.85);
         border-radius: 12px;
+    }
+
+    .stApp h1,
+    .stApp .stCaption,
+    .stApp .stCaption p,
+    .stApp [data-testid="stMarkdownContainer"] p {
+        color: #ffffff;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
     }
     </style>
     """,
